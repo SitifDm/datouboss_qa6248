@@ -1,0 +1,220 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Datouboss (QA6248 / Voltronic)",
+        "description": "Configurer un onduleur Datouboss connecté via une passerelle TCP-RS232 ou un câble console USB.",
+        "data": {
+          "host": "Hôte",
+          "port": "Port",
+          "name": "Nom",
+          "scan_interval": "Intervalle de lecture (secondes)",
+          "timeout": "Délai d'attente (secondes)",
+          "protocol_variant": "Protocole / modèle",
+          "transport": "Transport",
+          "serial_device": "Périphérique série",
+          "baudrate": "Vitesse (bauds)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Impossible de se connecter à l'onduleur"
+    },
+    "abort": {
+      "already_configured": "Cet onduleur est déjà configuré"
+    }
+  },
+  "options": {
+    "error": {
+      "cannot_connect": "Impossible de se connecter à l'onduleur"
+    },
+    "step": {
+      "init": {
+        "title": "Options Datouboss",
+        "data": {
+          "host": "Hôte",
+          "port": "Port",
+          "scan_interval": "Intervalle de lecture (secondes)",
+          "timeout": "Délai d'attente (secondes)",
+          "protocol_variant": "Protocole / modèle",
+          "transport": "Transport",
+          "serial_device": "Périphérique série",
+          "baudrate": "Vitesse (bauds)"
+        }
+      }
+    }
+  },
+  "selector": {
+    "transport": {
+      "options": {
+        "tcp": "TCP (passerelle RS232-Ethernet)",
+        "serial": "Série (câble console USB)"
+      }
+    },
+    "protocol_variant": {
+      "options": {
+        "auto": "Détection automatique",
+        "classic": "Voltronic classique",
+        "vmii_max": "VMII / MAX",
+        "qa6248": "QA6248 (Datouboss DT4862L)"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "output_active": { "name": "Sortie active" },
+      "charge_active": { "name": "Charge active" },
+      "scc_charging": { "name": "Charge solaire (SCC)" },
+      "ac_charging": { "name": "Charge secteur" },
+      "configuration_changed": { "name": "Configuration modifiée" },
+      "sbu_priority_flag": { "name": "Flag priorité SBU" },
+      "floating_mode": { "name": "Mode floating" },
+      "switch_on": { "name": "Onduleur allumé" },
+      "dustproof_installed": { "name": "Protection anti-poussière installée" },
+      "battery_disconnected": { "name": "Batterie déconnectée" },
+      "battery_low_alarm": { "name": "Alarme batterie faible" },
+      "overload": { "name": "Surcharge" },
+      "overtemp": { "name": "Surchauffe" },
+      "pv_power_low": { "name": "Puissance PV faible" },
+      "input_voltage_high": { "name": "Tension d'entrée élevée" },
+      "battery_voltage_high": { "name": "Tension batterie élevée" },
+      "fan_fault": { "name": "Défaut ventilateur" }
+    },
+    "number": {
+      "battery_bulk_voltage": { "name": "Tension bulk batterie" },
+      "battery_float_voltage": { "name": "Tension float batterie" },
+      "battery_under_voltage": { "name": "Seuil sous-tension batterie" },
+      "battery_overvoltage_alarm": { "name": "Alarme surtension batterie" }
+    },
+    "sensor": {
+      "mode": { "name": "Mode" },
+      "serial_number": { "name": "Numéro de série" },
+      "grid_voltage": { "name": "Tension réseau" },
+      "grid_frequency": { "name": "Fréquence réseau" },
+      "output_voltage": { "name": "Tension sortie" },
+      "output_frequency": { "name": "Fréquence sortie" },
+      "output_apparent_power": { "name": "Puissance apparente sortie" },
+      "output_active_power": { "name": "Puissance active sortie" },
+      "load_percent": { "name": "Charge" },
+      "bus_voltage": { "name": "Tension bus" },
+      "battery_voltage": { "name": "Tension batterie" },
+      "battery_charging_current": { "name": "Courant de charge batterie" },
+      "battery_capacity": { "name": "Capacité batterie" },
+      "battery_discharge_current": { "name": "Courant de décharge batterie" },
+      "heatsink_temperature": { "name": "Température dissipateur" },
+      "pv_battery_current": { "name": "Courant PV" },
+      "pv_input_voltage": { "name": "Tension PV" },
+      "pv_output_power": { "name": "Puissance PV" },
+      "scc_battery_voltage": { "name": "Tension batterie SCC" },
+      "device_status_bits": { "name": "Bits d'état appareil" },
+      "device_status_bits_2": { "name": "Bits d'état appareil 2" },
+      "fan_offset": { "name": "Décalage ventilateur" },
+      "eeprom_version": { "name": "Version EEPROM" },
+      "warnings_bitfield": { "name": "Bits d'alerte" },
+      "grid_rating_voltage": { "name": "Tension nominale réseau" },
+      "grid_rating_current": { "name": "Courant nominal réseau" },
+      "ac_output_rating_voltage": { "name": "Tension nominale sortie AC" },
+      "ac_output_rating_frequency": { "name": "Fréquence nominale sortie AC" },
+      "ac_output_rating_current": { "name": "Courant nominal sortie AC" },
+      "ac_output_rating_apparent_power": { "name": "Puissance apparente nominale sortie AC" },
+      "ac_output_rating_active_power": { "name": "Puissance active nominale sortie AC" },
+      "battery_rating_voltage": { "name": "Tension nominale batterie" },
+      "battery_recharge_voltage": { "name": "Tension de recharge batterie" },
+      "battery_under_voltage": { "name": "Seuil sous-tension batterie" },
+      "battery_bulk_voltage": { "name": "Tension bulk batterie" },
+      "battery_float_voltage": { "name": "Tension float batterie" },
+      "battery_type": { "name": "Type de batterie" },
+      "parallel_max_num": { "name": "Nombre max parallèle" },
+      "machine_type": { "name": "Type de machine" },
+      "topology": { "name": "Topologie" },
+      "output_mode": { "name": "Mode de sortie" },
+      "battery_redischarge_voltage": { "name": "Tension de redécharge batterie" },
+      "pv_ok_condition": { "name": "Condition PV OK" },
+      "qpigs_snapshot": { "name": "Instantané QPIGS" },
+      "qpiri_snapshot": { "name": "Instantané QPIRI" },
+      "raw_payloads": { "name": "Trames brutes" },
+      "daily_energy": { "name": "Énergie quotidienne" },
+      "monthly_energy": { "name": "Énergie mensuelle" },
+      "yearly_energy": { "name": "Énergie annuelle" },
+      "total_energy": { "name": "Énergie totale" },
+      "pv_temperature": { "name": "Température PV" },
+      "boost_temperature": { "name": "Température boost" },
+      "max_temperature": { "name": "Température maximale" }
+    },
+    "select": {
+      "output_source_priority": { "name": "Priorité source sortie" },
+      "charger_source_priority": { "name": "Priorité source charge" },
+      "ac_input_range": { "name": "Plage entrée AC" },
+      "max_ac_charge_current": { "name": "Courant max charge AC (A)" },
+      "max_total_charge_current": { "name": "Courant max charge total (A)" }
+    },
+    "switch": {
+      "buzzer": { "name": "Buzzer" },
+      "overload_restart": { "name": "Redémarrage sur surcharge" },
+      "overtemp_restart": { "name": "Redémarrage sur surchauffe" },
+      "lcd_backlight": { "name": "Rétroéclairage LCD" },
+      "auto_return_page1": { "name": "Retour auto page 1" },
+      "input_source_prompt": { "name": "Invite source d'entrée" },
+      "bms_control": { "name": "Contrôle BMS" }
+    }
+  },
+  "services": {
+    "send_command": {
+      "name": "Envoyer une commande",
+      "description": "Envoie une commande Datouboss / Voltronic brute. Le CRC et le CR sont ajoutés automatiquement.",
+      "fields": {
+        "config_entry_id": { "name": "ID de l'entrée de configuration" },
+        "command": { "name": "Commande" },
+        "expect_response": { "name": "Attendre une réponse" },
+        "refresh": { "name": "Rafraîchir après la commande" }
+      }
+    },
+    "refresh": {
+      "name": "Rafraîchir",
+      "description": "Force une mise à jour immédiate de tous les capteurs Datouboss.",
+      "fields": {
+        "config_entry_id": { "name": "ID de l'entrée de configuration" }
+      }
+    },
+    "set_output_source_priority": {
+      "name": "Définir la priorité de sortie",
+      "description": "Définit la priorité de la source de sortie de l'onduleur.",
+      "fields": {
+        "config_entry_id": { "name": "ID de l'entrée de configuration" },
+        "mode": { "name": "Mode" }
+      }
+    },
+    "set_charger_source_priority": {
+      "name": "Définir la priorité de charge",
+      "description": "Définit la priorité de la source de charge de l'onduleur.",
+      "fields": {
+        "config_entry_id": { "name": "ID de l'entrée de configuration" },
+        "mode": { "name": "Mode" }
+      }
+    },
+    "set_ac_input_range": {
+      "name": "Définir la plage AC",
+      "description": "Définit la plage d'entrée AC.",
+      "fields": {
+        "config_entry_id": { "name": "ID de l'entrée de configuration" },
+        "mode": { "name": "Mode" }
+      }
+    },
+    "set_max_ac_charge_current": {
+      "name": "Définir le courant max de charge AC",
+      "description": "Définit le courant maximal de charge secteur.",
+      "fields": {
+        "config_entry_id": { "name": "ID de l'entrée de configuration" },
+        "amps": { "name": "Ampères" }
+      }
+    },
+    "set_max_total_charge_current": {
+      "name": "Définir le courant max de charge total",
+      "description": "Définit le courant maximal de charge total.",
+      "fields": {
+        "config_entry_id": { "name": "ID de l'entrée de configuration" },
+        "amps": { "name": "Ampères" }
+      }
+    }
+  }
+}

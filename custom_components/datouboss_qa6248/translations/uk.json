@@ -1,0 +1,220 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Datouboss (QA6248 / Voltronic)",
+        "description": "Налаштуйте інвертор Datouboss, підключений через міст TCP-RS232 або USB-консольний кабель.",
+        "data": {
+          "host": "Хост",
+          "port": "Порт",
+          "name": "Назва",
+          "scan_interval": "Інтервал опитування (секунди)",
+          "timeout": "Тайм-аут (секунди)",
+          "protocol_variant": "Протокол / модель",
+          "transport": "Транспорт",
+          "serial_device": "Послідовний порт",
+          "baudrate": "Швидкість (бод)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Не вдалося підключитися до інвертора"
+    },
+    "abort": {
+      "already_configured": "Цей інвертор вже налаштований"
+    }
+  },
+  "options": {
+    "error": {
+      "cannot_connect": "Не вдалося підключитися до інвертора"
+    },
+    "step": {
+      "init": {
+        "title": "Налаштування Datouboss",
+        "data": {
+          "host": "Хост",
+          "port": "Порт",
+          "scan_interval": "Інтервал опитування (секунди)",
+          "timeout": "Тайм-аут (секунди)",
+          "protocol_variant": "Протокол / модель",
+          "transport": "Транспорт",
+          "serial_device": "Послідовний порт",
+          "baudrate": "Швидкість (бод)"
+        }
+      }
+    }
+  },
+  "selector": {
+    "transport": {
+      "options": {
+        "tcp": "TCP (міст RS232-Ethernet)",
+        "serial": "Послідовний порт (USB-консольний кабель)"
+      }
+    },
+    "protocol_variant": {
+      "options": {
+        "auto": "Автоопределение",
+        "classic": "Класичний Voltronic",
+        "vmii_max": "VMII / MAX",
+        "qa6248": "QA6248 (Datouboss DT4862L)"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "output_active": { "name": "Вихід активний" },
+      "charge_active": { "name": "Заряд активний" },
+      "scc_charging": { "name": "Заряд від сонця (SCC)" },
+      "ac_charging": { "name": "Заряд від мережі" },
+      "configuration_changed": { "name": "Конфігурацію змінено" },
+      "sbu_priority_flag": { "name": "Прапор пріоритету SBU" },
+      "floating_mode": { "name": "Режим підтримки (float)" },
+      "switch_on": { "name": "Інвертор увімкнено" },
+      "dustproof_installed": { "name": "Пилозахист встановлено" },
+      "battery_disconnected": { "name": "Батарея не підключена" },
+      "battery_low_alarm": { "name": "Низький заряд батареї" },
+      "overload": { "name": "Перевантаження" },
+      "overtemp": { "name": "Перегрів" },
+      "pv_power_low": { "name": "Низька потужність PV" },
+      "input_voltage_high": { "name": "Висока вхідна напруга" },
+      "battery_voltage_high": { "name": "Висока напруга батареї" },
+      "fan_fault": { "name": "Несправність вентилятора" }
+    },
+    "number": {
+      "battery_bulk_voltage": { "name": "Напруга основного заряду (bulk)" },
+      "battery_float_voltage": { "name": "Напруга підтримки (float)" },
+      "battery_under_voltage": { "name": "Поріг відключення батареї" },
+      "battery_overvoltage_alarm": { "name": "Поріг високої напруги батареї" }
+    },
+    "sensor": {
+      "mode": { "name": "Режим" },
+      "serial_number": { "name": "Серійний номер" },
+      "grid_voltage": { "name": "Напруга мережі" },
+      "grid_frequency": { "name": "Частота мережі" },
+      "output_voltage": { "name": "Напруга виходу" },
+      "output_frequency": { "name": "Частота виходу" },
+      "output_apparent_power": { "name": "Повна потужність виходу" },
+      "output_active_power": { "name": "Активна потужність виходу" },
+      "load_percent": { "name": "Навантаження" },
+      "bus_voltage": { "name": "Напруга шини" },
+      "battery_voltage": { "name": "Напруга батареї" },
+      "battery_charging_current": { "name": "Струм заряду батареї" },
+      "battery_capacity": { "name": "Заряд батареї" },
+      "battery_discharge_current": { "name": "Струм розряду батареї" },
+      "heatsink_temperature": { "name": "Температура радіатора" },
+      "pv_battery_current": { "name": "Струм PV" },
+      "pv_input_voltage": { "name": "Напруга PV" },
+      "pv_output_power": { "name": "Потужність PV" },
+      "scc_battery_voltage": { "name": "Напруга батареї SCC" },
+      "device_status_bits": { "name": "Біти стану пристрою" },
+      "device_status_bits_2": { "name": "Біти стану пристрою 2" },
+      "fan_offset": { "name": "Зміщення вентилятора" },
+      "eeprom_version": { "name": "Версія EEPROM" },
+      "warnings_bitfield": { "name": "Карта попереджень" },
+      "grid_rating_voltage": { "name": "Номінальна напруга мережі" },
+      "grid_rating_current": { "name": "Номінальний струм мережі" },
+      "ac_output_rating_voltage": { "name": "Номінальна напруга виходу AC" },
+      "ac_output_rating_frequency": { "name": "Номінальна частота виходу AC" },
+      "ac_output_rating_current": { "name": "Номінальний струм виходу AC" },
+      "ac_output_rating_apparent_power": { "name": "Номінальна повна потужність виходу AC" },
+      "ac_output_rating_active_power": { "name": "Номінальна активна потужність виходу AC" },
+      "battery_rating_voltage": { "name": "Номінальна напруга батареї" },
+      "battery_recharge_voltage": { "name": "Напруга повторного заряду" },
+      "battery_under_voltage": { "name": "Поріг низької напруги батареї" },
+      "battery_bulk_voltage": { "name": "Напруга основного заряду (bulk)" },
+      "battery_float_voltage": { "name": "Напруга підтримки (float)" },
+      "battery_type": { "name": "Тип батареї" },
+      "parallel_max_num": { "name": "Максимум паралельних машин" },
+      "machine_type": { "name": "Тип машини" },
+      "topology": { "name": "Топологія" },
+      "output_mode": { "name": "Режим виходу" },
+      "battery_redischarge_voltage": { "name": "Напруга повторного розряду" },
+      "pv_ok_condition": { "name": "Умова PV OK" },
+      "qpigs_snapshot": { "name": "Знімок QPIGS" },
+      "qpiri_snapshot": { "name": "Знімок QPIRI" },
+      "raw_payloads": { "name": "Сирі кадри" },
+      "daily_energy": { "name": "Добова генерація" },
+      "monthly_energy": { "name": "Місячна генерація" },
+      "yearly_energy": { "name": "Річна генерація" },
+      "total_energy": { "name": "Загальна генерація" },
+      "pv_temperature": { "name": "Температура PV" },
+      "boost_temperature": { "name": "Температура boost" },
+      "max_temperature": { "name": "Максимальна температура" }
+    },
+    "select": {
+      "output_source_priority": { "name": "Пріоритет джерела виходу" },
+      "charger_source_priority": { "name": "Пріоритет джерела заряду" },
+      "ac_input_range": { "name": "Діапазон входу AC" },
+      "max_ac_charge_current": { "name": "Макс. струм заряду від мережі (А)" },
+      "max_total_charge_current": { "name": "Макс. сумарний струм заряду (А)" }
+    },
+    "switch": {
+      "buzzer": { "name": "Звуковий сигнал" },
+      "overload_restart": { "name": "Перезапуск при перевантаженні" },
+      "overtemp_restart": { "name": "Перезапуск при перегріві" },
+      "lcd_backlight": { "name": "Підсвічування LCD" },
+      "auto_return_page1": { "name": "Авто-повернення на стор. 1" },
+      "input_source_prompt": { "name": "Підказка джерела входу" },
+      "bms_control": { "name": "Управління BMS" }
+    }
+  },
+  "services": {
+    "send_command": {
+      "name": "Надіслати команду",
+      "description": "Надіслати сиру команду Datouboss / Voltronic. CRC і CR додаються автоматично.",
+      "fields": {
+        "config_entry_id": { "name": "ID запису конфігурації" },
+        "command": { "name": "Команда" },
+        "expect_response": { "name": "Чекати відповідь" },
+        "refresh": { "name": "Оновити після команди" }
+      }
+    },
+    "refresh": {
+      "name": "Оновити",
+      "description": "Примусово оновити всі датчики Datouboss.",
+      "fields": {
+        "config_entry_id": { "name": "ID запису конфігурації" }
+      }
+    },
+    "set_output_source_priority": {
+      "name": "Задати пріоритет джерела виходу",
+      "description": "Встановити пріоритет джерела виходу інвертора.",
+      "fields": {
+        "config_entry_id": { "name": "ID запису конфігурації" },
+        "mode": { "name": "Режим" }
+      }
+    },
+    "set_charger_source_priority": {
+      "name": "Задати пріоритет джерела заряду",
+      "description": "Встановити пріоритет джерела заряду інвертора.",
+      "fields": {
+        "config_entry_id": { "name": "ID запису конфігурації" },
+        "mode": { "name": "Режим" }
+      }
+    },
+    "set_ac_input_range": {
+      "name": "Задати діапазон входу AC",
+      "description": "Встановити діапазон входу AC.",
+      "fields": {
+        "config_entry_id": { "name": "ID запису конфігурації" },
+        "mode": { "name": "Режим" }
+      }
+    },
+    "set_max_ac_charge_current": {
+      "name": "Задати макс. струм заряду від мережі",
+      "description": "Встановити максимальний струм заряду від мережі.",
+      "fields": {
+        "config_entry_id": { "name": "ID запису конфігурації" },
+        "amps": { "name": "Ампери" }
+      }
+    },
+    "set_max_total_charge_current": {
+      "name": "Задати макс. сумарний струм заряду",
+      "description": "Встановити максимальний сумарний струм заряду.",
+      "fields": {
+        "config_entry_id": { "name": "ID запису конфігурації" },
+        "amps": { "name": "Ампери" }
+      }
+    }
+  }
+}

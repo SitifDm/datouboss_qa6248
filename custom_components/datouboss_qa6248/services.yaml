@@ -1,0 +1,133 @@
+send_command:
+  name: Send command
+  description: >-
+    Send a raw Datouboss / Voltronic command. The integration appends CRC and
+    CR automatically. For QA6248 protocol, read commands (HSTS, HBAT, HOP, HPV,
+    HTEMP, HEEP1, HGEN) are sent without CRC, write commands (POP, PCP, PGR,
+    PBT, etc.) are sent with CRC16.
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        text:
+    command:
+      required: true
+      example: HSTS
+      selector:
+        text:
+    expect_response:
+      default: true
+      selector:
+        boolean:
+    refresh:
+      default: false
+      selector:
+        boolean:
+
+refresh:
+  name: Refresh
+  description: Force an immediate refresh of all Datouboss sensors.
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        text:
+
+set_output_source_priority:
+  name: Set output source priority
+  description: >-
+    Set the inverter output source priority. For QA6248: SUB (grid first), SBU
+    (solar-battery-grid), SUF (solar-grid-battery), PEC (parallel). For legacy
+    Voltronic: utility_first, solar_first, sbu_priority.
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        text:
+    mode:
+      required: true
+      selector:
+        select:
+          options:
+            - SUB
+            - SBU
+            - SUF
+            - PEC
+            - utility_first
+            - solar_first
+            - sbu_priority
+
+set_charger_source_priority:
+  name: Set charger source priority
+  description: >-
+    Set the inverter charger source priority. For QA6248: CSO (solar first),
+    SNU (solar and grid), OSO (solar only), SOR (solar or grid). For legacy
+    Voltronic: utility_first, solar_first, solar_and_utility, solar_only.
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        text:
+    mode:
+      required: true
+      selector:
+        select:
+          options:
+            - CSO
+            - SNU
+            - OSO
+            - SOR
+            - utility_first
+            - solar_first
+            - solar_and_utility
+            - solar_only
+
+set_ac_input_range:
+  name: Set AC input range
+  description: Set the AC input voltage range. APL = wide range (90-280V), UPS = narrow range (170-280V).
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        text:
+    mode:
+      required: true
+      selector:
+        select:
+          options:
+            - APL
+            - UPS
+            - "APL (20ms/90-280 Vac)"
+            - "UPS (10ms/170-280 Vac)"
+
+set_max_ac_charge_current:
+  name: Set max AC charge current
+  description: Set the maximum grid/utility charging current in amps.
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        text:
+    amps:
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 999
+          mode: box
+
+set_max_total_charge_current:
+  name: Set max total charge current
+  description: Set the maximum total charging current in amps.
+  fields:
+    config_entry_id:
+      required: true
+      selector:
+        text:
+    amps:
+      required: true
+      selector:
+        number:
+          min: 0
+          max: 999
+          mode: box

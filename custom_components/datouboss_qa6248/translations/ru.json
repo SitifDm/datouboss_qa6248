@@ -1,0 +1,220 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Datouboss (QA6248 / Voltronic)",
+        "description": "Настройте инвертор Datouboss, подключённый через мост TCP-RS232 или USB-консольный кабель.",
+        "data": {
+          "host": "Хост",
+          "port": "Порт",
+          "name": "Название",
+          "scan_interval": "Интервал опроса (секунды)",
+          "timeout": "Тайм-аут (секунды)",
+          "protocol_variant": "Протокол / модель",
+          "transport": "Транспорт",
+          "serial_device": "Последовательный порт",
+          "baudrate": "Скорость (бод)"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Не удалось подключиться к инвертору"
+    },
+    "abort": {
+      "already_configured": "Этот инвертор уже настроен"
+    }
+  },
+  "options": {
+    "error": {
+      "cannot_connect": "Не удалось подключиться к инвертору"
+    },
+    "step": {
+      "init": {
+        "title": "Настройки Datouboss",
+        "data": {
+          "host": "Хост",
+          "port": "Порт",
+          "scan_interval": "Интервал опроса (секунды)",
+          "timeout": "Тайм-аут (секунды)",
+          "protocol_variant": "Протокол / модель",
+          "transport": "Транспорт",
+          "serial_device": "Последовательный порт",
+          "baudrate": "Скорость (бод)"
+        }
+      }
+    }
+  },
+  "selector": {
+    "transport": {
+      "options": {
+        "tcp": "TCP (мост RS232-Ethernet)",
+        "serial": "Последовательный порт (USB-консольный кабель)"
+      }
+    },
+    "protocol_variant": {
+      "options": {
+        "auto": "Автоопределение",
+        "classic": "Классический Voltronic",
+        "vmii_max": "VMII / MAX",
+        "qa6248": "QA6248 (Datouboss DT4862L)"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "output_active": { "name": "Выход активен" },
+      "charge_active": { "name": "Заряд активен" },
+      "scc_charging": { "name": "Заряд от солнца (SCC)" },
+      "ac_charging": { "name": "Заряд от сети" },
+      "configuration_changed": { "name": "Конфигурация изменена" },
+      "sbu_priority_flag": { "name": "Флаг приоритета SBU" },
+      "floating_mode": { "name": "Режим поддержания (float)" },
+      "switch_on": { "name": "Инвертор включён" },
+      "dustproof_installed": { "name": "Пылезащита установлена" },
+      "battery_disconnected": { "name": "Батарея не подключена" },
+      "battery_low_alarm": { "name": "Низкий заряд батареи" },
+      "overload": { "name": "Перегрузка" },
+      "overtemp": { "name": "Перегрев" },
+      "pv_power_low": { "name": "Низкая мощность PV" },
+      "input_voltage_high": { "name": "Высокое входное напряжение" },
+      "battery_voltage_high": { "name": "Высокое напряжение батареи" },
+      "fan_fault": { "name": "Неисправность вентилятора" }
+    },
+    "number": {
+      "battery_bulk_voltage": { "name": "Напряжение основного заряда (bulk)" },
+      "battery_float_voltage": { "name": "Напряжение поддержания (float)" },
+      "battery_under_voltage": { "name": "Порог отключения батареи" },
+      "battery_overvoltage_alarm": { "name": "Порог высокого напряжения батареи" }
+    },
+    "sensor": {
+      "mode": { "name": "Режим" },
+      "serial_number": { "name": "Серийный номер" },
+      "grid_voltage": { "name": "Напряжение сети" },
+      "grid_frequency": { "name": "Частота сети" },
+      "output_voltage": { "name": "Напряжение выхода" },
+      "output_frequency": { "name": "Частота выхода" },
+      "output_apparent_power": { "name": "Полная мощность выхода" },
+      "output_active_power": { "name": "Активная мощность выхода" },
+      "load_percent": { "name": "Нагрузка" },
+      "bus_voltage": { "name": "Напряжение шины" },
+      "battery_voltage": { "name": "Напряжение батареи" },
+      "battery_charging_current": { "name": "Ток заряда батареи" },
+      "battery_capacity": { "name": "Заряд батареи" },
+      "battery_discharge_current": { "name": "Ток разряда батареи" },
+      "heatsink_temperature": { "name": "Температура радиатора" },
+      "pv_battery_current": { "name": "Ток PV" },
+      "pv_input_voltage": { "name": "Напряжение PV" },
+      "pv_output_power": { "name": "Мощность PV" },
+      "scc_battery_voltage": { "name": "Напряжение батареи SCC" },
+      "device_status_bits": { "name": "Биты состояния устройства" },
+      "device_status_bits_2": { "name": "Биты состояния устройства 2" },
+      "fan_offset": { "name": "Смещение вентилятора" },
+      "eeprom_version": { "name": "Версия EEPROM" },
+      "warnings_bitfield": { "name": "Карта предупреждений" },
+      "grid_rating_voltage": { "name": "Номинальное напряжение сети" },
+      "grid_rating_current": { "name": "Номинальный ток сети" },
+      "ac_output_rating_voltage": { "name": "Номинальное напряжение выхода AC" },
+      "ac_output_rating_frequency": { "name": "Номинальная частота выхода AC" },
+      "ac_output_rating_current": { "name": "Номинальный ток выхода AC" },
+      "ac_output_rating_apparent_power": { "name": "Номинальная полная мощность выхода AC" },
+      "ac_output_rating_active_power": { "name": "Номинальная активная мощность выхода AC" },
+      "battery_rating_voltage": { "name": "Номинальное напряжение батареи" },
+      "battery_recharge_voltage": { "name": "Напряжение повторного заряда" },
+      "battery_under_voltage": { "name": "Порог низкого напряжения батареи" },
+      "battery_bulk_voltage": { "name": "Напряжение основного заряда (bulk)" },
+      "battery_float_voltage": { "name": "Напряжение поддержания (float)" },
+      "battery_type": { "name": "Тип батареи" },
+      "parallel_max_num": { "name": "Максимум параллельных машин" },
+      "machine_type": { "name": "Тип машины" },
+      "topology": { "name": "Топология" },
+      "output_mode": { "name": "Режим выхода" },
+      "battery_redischarge_voltage": { "name": "Напряжение повторного разряда" },
+      "pv_ok_condition": { "name": "Условие PV OK" },
+      "qpigs_snapshot": { "name": "Снимок QPIGS" },
+      "qpiri_snapshot": { "name": "Снимок QPIRI" },
+      "raw_payloads": { "name": "Сырые кадры" },
+      "daily_energy": { "name": "Суточная генерация" },
+      "monthly_energy": { "name": "Месячная генерация" },
+      "yearly_energy": { "name": "Годовая генерация" },
+      "total_energy": { "name": "Общая генерация" },
+      "pv_temperature": { "name": "Температура PV" },
+      "boost_temperature": { "name": "Температура boost" },
+      "max_temperature": { "name": "Максимальная температура" }
+    },
+    "select": {
+      "output_source_priority": { "name": "Приоритет источника выхода" },
+      "charger_source_priority": { "name": "Приоритет источника заряда" },
+      "ac_input_range": { "name": "Диапазон входа AC" },
+      "max_ac_charge_current": { "name": "Макс. ток заряда от сети (А)" },
+      "max_total_charge_current": { "name": "Макс. суммарный ток заряда (А)" }
+    },
+    "switch": {
+      "buzzer": { "name": "Звуковой сигнал" },
+      "overload_restart": { "name": "Перезапуск при перегрузке" },
+      "overtemp_restart": { "name": "Перезапуск при перегреве" },
+      "lcd_backlight": { "name": "Подсветка LCD" },
+      "auto_return_page1": { "name": "Авто-возврат на стр. 1" },
+      "input_source_prompt": { "name": "Звук смены источника питания" },
+      "bms_control": { "name": "Управление BMS" }
+    }
+  },
+  "services": {
+    "send_command": {
+      "name": "Отправить команду",
+      "description": "Отправить сырую команду Datouboss / Voltronic. CRC и CR добавляются автоматически.",
+      "fields": {
+        "config_entry_id": { "name": "ID записи конфигурации" },
+        "command": { "name": "Команда" },
+        "expect_response": { "name": "Ждать ответ" },
+        "refresh": { "name": "Обновить после команды" }
+      }
+    },
+    "refresh": {
+      "name": "Обновить",
+      "description": "Принудительно обновить все датчики Datouboss.",
+      "fields": {
+        "config_entry_id": { "name": "ID записи конфигурации" }
+      }
+    },
+    "set_output_source_priority": {
+      "name": "Задать приоритет источника выхода",
+      "description": "Установить приоритет источника выхода инвертора.",
+      "fields": {
+        "config_entry_id": { "name": "ID записи конфигурации" },
+        "mode": { "name": "Режим" }
+      }
+    },
+    "set_charger_source_priority": {
+      "name": "Задать приоритет источника заряда",
+      "description": "Установить приоритет источника заряда инвертора.",
+      "fields": {
+        "config_entry_id": { "name": "ID записи конфигурации" },
+        "mode": { "name": "Режим" }
+      }
+    },
+    "set_ac_input_range": {
+      "name": "Задать диапазон входа AC",
+      "description": "Установить диапазон входа AC.",
+      "fields": {
+        "config_entry_id": { "name": "ID записи конфигурации" },
+        "mode": { "name": "Режим" }
+      }
+    },
+    "set_max_ac_charge_current": {
+      "name": "Задать макс. ток заряда от сети",
+      "description": "Установить максимальный ток заряда от сети.",
+      "fields": {
+        "config_entry_id": { "name": "ID записи конфигурации" },
+        "amps": { "name": "Амперы" }
+      }
+    },
+    "set_max_total_charge_current": {
+      "name": "Задать макс. суммарный ток заряда",
+      "description": "Установить максимальный суммарный ток заряда.",
+      "fields": {
+        "config_entry_id": { "name": "ID записи конфигурации" },
+        "amps": { "name": "Амперы" }
+      }
+    }
+  }
+}

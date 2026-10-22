@@ -1,0 +1,220 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Datouboss (QA6248 / Voltronic)",
+        "description": "Configure a Datouboss inverter connected via a TCP-RS232 bridge or USB console cable.",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "name": "Name",
+          "scan_interval": "Scan interval (seconds)",
+          "timeout": "Timeout (seconds)",
+          "protocol_variant": "Protocol / model",
+          "transport": "Transport",
+          "serial_device": "Serial device",
+          "baudrate": "Baud rate"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Failed to connect to the inverter"
+    },
+    "abort": {
+      "already_configured": "This inverter is already configured"
+    }
+  },
+  "options": {
+    "error": {
+      "cannot_connect": "Failed to connect to the inverter"
+    },
+    "step": {
+      "init": {
+        "title": "Datouboss options",
+        "data": {
+          "host": "Host",
+          "port": "Port",
+          "scan_interval": "Scan interval (seconds)",
+          "timeout": "Timeout (seconds)",
+          "protocol_variant": "Protocol / model",
+          "transport": "Transport",
+          "serial_device": "Serial device",
+          "baudrate": "Baud rate"
+        }
+      }
+    }
+  },
+  "selector": {
+    "transport": {
+      "options": {
+        "tcp": "TCP (RS232-Ethernet bridge)",
+        "serial": "Serial (USB console cable)"
+      }
+    },
+    "protocol_variant": {
+      "options": {
+        "auto": "Auto-detect",
+        "classic": "Classic Voltronic",
+        "vmii_max": "VMII / MAX",
+        "qa6248": "QA6248 (Datouboss DT4862L)"
+      }
+    }
+  },
+  "entity": {
+    "binary_sensor": {
+      "output_active": { "name": "Output active" },
+      "charge_active": { "name": "Charge active" },
+      "scc_charging": { "name": "Solar charging (SCC)" },
+      "ac_charging": { "name": "AC charging" },
+      "configuration_changed": { "name": "Configuration changed" },
+      "sbu_priority_flag": { "name": "SBU priority flag" },
+      "floating_mode": { "name": "Floating mode" },
+      "switch_on": { "name": "Inverter on" },
+      "dustproof_installed": { "name": "Dustproof installed" },
+      "battery_disconnected": { "name": "Battery disconnected" },
+      "battery_low_alarm": { "name": "Battery low alarm" },
+      "overload": { "name": "Overload" },
+      "overtemp": { "name": "Overtemperature" },
+      "pv_power_low": { "name": "PV power low" },
+      "input_voltage_high": { "name": "Input voltage high" },
+      "battery_voltage_high": { "name": "Battery voltage high" },
+      "fan_fault": { "name": "Fan fault" }
+    },
+    "number": {
+      "battery_bulk_voltage": { "name": "Battery bulk voltage" },
+      "battery_float_voltage": { "name": "Battery float voltage" },
+      "battery_under_voltage": { "name": "Battery under voltage" },
+      "battery_overvoltage_alarm": { "name": "Battery overvoltage alarm" }
+    },
+    "sensor": {
+      "mode": { "name": "Mode" },
+      "serial_number": { "name": "Serial number" },
+      "grid_voltage": { "name": "Grid voltage" },
+      "grid_frequency": { "name": "Grid frequency" },
+      "output_voltage": { "name": "Output voltage" },
+      "output_frequency": { "name": "Output frequency" },
+      "output_apparent_power": { "name": "Output apparent power" },
+      "output_active_power": { "name": "Output active power" },
+      "load_percent": { "name": "Load" },
+      "bus_voltage": { "name": "Bus voltage" },
+      "battery_voltage": { "name": "Battery voltage" },
+      "battery_charging_current": { "name": "Battery charging current" },
+      "battery_capacity": { "name": "Battery capacity" },
+      "battery_discharge_current": { "name": "Battery discharge current" },
+      "heatsink_temperature": { "name": "Heatsink temperature" },
+      "pv_battery_current": { "name": "PV current" },
+      "pv_input_voltage": { "name": "PV input voltage" },
+      "pv_output_power": { "name": "PV output power" },
+      "scc_battery_voltage": { "name": "SCC battery voltage" },
+      "device_status_bits": { "name": "Device status bits" },
+      "device_status_bits_2": { "name": "Device status bits 2" },
+      "fan_offset": { "name": "Fan offset" },
+      "eeprom_version": { "name": "EEPROM version" },
+      "warnings_bitfield": { "name": "Warnings bitfield" },
+      "grid_rating_voltage": { "name": "Grid rating voltage" },
+      "grid_rating_current": { "name": "Grid rating current" },
+      "ac_output_rating_voltage": { "name": "AC output rating voltage" },
+      "ac_output_rating_frequency": { "name": "AC output rating frequency" },
+      "ac_output_rating_current": { "name": "AC output rating current" },
+      "ac_output_rating_apparent_power": { "name": "AC output rating apparent power" },
+      "ac_output_rating_active_power": { "name": "AC output rating active power" },
+      "battery_rating_voltage": { "name": "Battery rating voltage" },
+      "battery_recharge_voltage": { "name": "Battery recharge voltage" },
+      "battery_under_voltage": { "name": "Battery under voltage" },
+      "battery_bulk_voltage": { "name": "Battery bulk voltage" },
+      "battery_float_voltage": { "name": "Battery float voltage" },
+      "battery_type": { "name": "Battery type" },
+      "parallel_max_num": { "name": "Parallel max number" },
+      "machine_type": { "name": "Machine type" },
+      "topology": { "name": "Topology" },
+      "output_mode": { "name": "Output mode" },
+      "battery_redischarge_voltage": { "name": "Battery redischarge voltage" },
+      "pv_ok_condition": { "name": "PV OK condition" },
+      "qpigs_snapshot": { "name": "QPIGS snapshot" },
+      "qpiri_snapshot": { "name": "QPIRI snapshot" },
+      "raw_payloads": { "name": "Raw payloads" },
+      "daily_energy": { "name": "Daily energy" },
+      "monthly_energy": { "name": "Monthly energy" },
+      "yearly_energy": { "name": "Yearly energy" },
+      "total_energy": { "name": "Total energy" },
+      "pv_temperature": { "name": "PV temperature" },
+      "boost_temperature": { "name": "Boost temperature" },
+      "max_temperature": { "name": "Max temperature" }
+    },
+    "select": {
+      "output_source_priority": { "name": "Output source priority" },
+      "charger_source_priority": { "name": "Charger source priority" },
+      "ac_input_range": { "name": "AC input range" },
+      "max_ac_charge_current": { "name": "Max AC charge current (A)" },
+      "max_total_charge_current": { "name": "Max total charge current (A)" }
+    },
+    "switch": {
+      "buzzer": { "name": "Buzzer" },
+      "overload_restart": { "name": "Overload restart" },
+      "overtemp_restart": { "name": "Overtemp restart" },
+      "lcd_backlight": { "name": "LCD backlight" },
+      "auto_return_page1": { "name": "Auto return to page 1" },
+      "input_source_prompt": { "name": "Input source prompt" },
+      "bms_control": { "name": "BMS control" }
+    }
+  },
+  "services": {
+    "send_command": {
+      "name": "Send command",
+      "description": "Send a raw Datouboss / Voltronic command. CRC and CR are appended automatically.",
+      "fields": {
+        "config_entry_id": { "name": "Config entry ID" },
+        "command": { "name": "Command" },
+        "expect_response": { "name": "Expect response" },
+        "refresh": { "name": "Refresh after command" }
+      }
+    },
+    "refresh": {
+      "name": "Refresh",
+      "description": "Force an immediate refresh of all Datouboss sensors.",
+      "fields": {
+        "config_entry_id": { "name": "Config entry ID" }
+      }
+    },
+    "set_output_source_priority": {
+      "name": "Set output source priority",
+      "description": "Set the inverter output source priority.",
+      "fields": {
+        "config_entry_id": { "name": "Config entry ID" },
+        "mode": { "name": "Mode" }
+      }
+    },
+    "set_charger_source_priority": {
+      "name": "Set charger source priority",
+      "description": "Set the inverter charger source priority.",
+      "fields": {
+        "config_entry_id": { "name": "Config entry ID" },
+        "mode": { "name": "Mode" }
+      }
+    },
+    "set_ac_input_range": {
+      "name": "Set AC input range",
+      "description": "Set the AC input range mode.",
+      "fields": {
+        "config_entry_id": { "name": "Config entry ID" },
+        "mode": { "name": "Mode" }
+      }
+    },
+    "set_max_ac_charge_current": {
+      "name": "Set max AC charge current",
+      "description": "Set the maximum grid/utility charging current.",
+      "fields": {
+        "config_entry_id": { "name": "Config entry ID" },
+        "amps": { "name": "Amps" }
+      }
+    },
+    "set_max_total_charge_current": {
+      "name": "Set max total charge current",
+      "description": "Set the maximum total charging current.",
+      "fields": {
+        "config_entry_id": { "name": "Config entry ID" },
+        "amps": { "name": "Amps" }
+      }
+    }
+  }
+}
