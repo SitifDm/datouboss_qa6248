@@ -118,6 +118,8 @@ This integration uses a **direct serial connection** via USB-to-RS232 adapter â€
 | **Scan interval** | `5` seconds | Polling frequency |
 | **Timeout** | `5` seconds | Command timeout |
 
+![Configuration Form](config_form.png)
+
 4. Click **Submit**. The integration will probe the inverter and create all entities automatically.
 
 ---
